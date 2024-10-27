@@ -4,7 +4,7 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
     <link rel="stylesheet" href="styles.css">
-    <script src="app.js"></script>
+    
     
 </head>
 
@@ -34,6 +34,30 @@
             </div>
         </div>
     </div>
+<script>
+let gr = document.getElementById("gameResult");
+let userInput = document.getElementById("userInput");
+let rn = Math.ceil(Math.random() * 100)
+
+function checkGuess() {
+    let gn = parseInt(userInput.value);
+    if (gn > rn) {
+        gr.textContent = "Too high, Try again!!";
+        gr.style.color = "white";
+    } else if (gn < rn) {
+        gr.textContent = "Too low, Try again!!";
+        gr.style.color = "white";
+    } else if (gn === rn) {
+        gr.textContent = "Congratulations, You got it right!!";
+        gr.style.color = "white";
+        gr.style.backgroundColor = "green"
+    } else {
+        gr.textContent = "Please provide a valid input.";
+        gr.style.backgroundColor = "#1e217c";
+    }
+}
+</script>
+    
 </body>
 
 </html>
